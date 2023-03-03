@@ -19,14 +19,29 @@ fish_stock <- read_csv("data/great-lakes-fish-stock.csv")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+```{r}
+glimpse(fish_stock)
+```
+
+
+there are 8 variables and 56232 observations. each row represents an observation.
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 2 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r fish_species}
+salmon_stock <- fish_stock %>%
+  filter(SPECIES %in% c("ATS", "CHS", "COS"), 
+         !is.na(WEIGHT),
+         LAKE != "ON")
+```
+
+```{r salmon_stock}
+glimpse(salmon_stock)
+```
+
+In the data set there are 8 variables and 5131 observations. 
+numerical variables= weight, agemonth, no stocked, species, year, and month.
+string variables= lake and state.
 
 ### Exercise 3
 
