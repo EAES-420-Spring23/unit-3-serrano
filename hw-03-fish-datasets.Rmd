@@ -169,7 +169,8 @@ fish_stock_yearly <- fish_stock_yearly %>%
 catch_data <- catch_data %>% 
   rename(catch_weight_yr_lbs = values)
 ```
-
+left_join(
+ 
 Our two datasets are now ready to be merged using a join function.
 
 6.  Copy and complete the 6 code chunks under Exercise 6 in your starter file to join these two data sets in 6 different ways (i.e. using `left_join()`, `right_join()`, `inner_join()`, `full_join()`, and `anti_join()` (in two different ways)). Look at the output of each chunk, and write a short narrative response about what the join function did. (I.e., Which rows were retained in the output data frame and why? What did R do when one of the two data frames did not contain a particular row?)

@@ -74,32 +74,60 @@ Last year is `r max(fish_stock$YEAR)` in the dataset.
 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
-
-### Code chunks provided
+chunks provided
 
 Remember to change eval = FALSE, to eval = TRUE, when you are ready to run the code/knit the document.
+### Exercise 6
 
-```{r finalize-fish-stock, eval = FALSE}
+```{r finalize-fish-stock, eval = TRUE}
 fish_stock_yearly <- fish_stock_yearly %>% 
-  rename(year = YEAR) %>% 
-  mutate(stock_weight_yr_lbs = as.integer(STOCK_WEIGHT_YR * 0.454 / 1000)) %>% # 1 lb = 1 kg * 0.454
+  stock_weight_yr(sum = WEIGHT) %>% 
+  mutate(stock_weight_yr_lbs = as.integer(stock_weight_yr * 0.454 / 1000)) %>% # 1 lb = 1 kg * 0.454
   select(year, stock_weight_yr_lbs)
 ```
 
-```{r finalize-catch-data, eval = FALSE}
+```{r finalize-catch-data, eval = TRUE}
 catch_data <- catch_data %>% 
-  rename(catch_weight_yr_lbs = values)
+  summarise(catch_weight_yr_lbs = values)
 ```
 
-### Exercise 6
+```{r anti-join-v1, eval = FALSE}
+catch_data %>% 
+  anti_join(fish_stock_yearly)
+```
 
-Remove this text, and add your answer for Exercise 6 here.
+Add narrative here.
+
+```{r anti-join-v2, eval = FALSE}
+fish_stock_yearly %>% 
+  anti_join(catch_data)
+```
+
 
 ### Exercise 7
 
-Remove this text, and add your answer for Exercise 7 here.
+```{r pivot-longer, eval = TRUE}
+catch_data %>% 
+  left_join(catch_data) %>% 
+  summarise(names_to = "activity",
+               values_to = "10",
+               cols = 5:6)
+```
 
 ### Exercise 8
 
-Remove this text, and add your answer for Exercise 8 here.
+```{r final-visualization, eval = FALSE}
+catch_data %>% 
+  left_join(fish_stock_yearly) %>% 
+  ___(names_to = "activity",
+               values_to = "1000",
+               cols = 5:6)
+ggplot() +
+geom_line() +
+  facet_wrap(~E, ncol = 3) +
+  theme_bw() +
+  labs(
+        x = 
+          y=
+          color=
+```
