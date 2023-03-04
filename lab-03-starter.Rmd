@@ -111,3 +111,8 @@ geom_line() +
         color = "SPECIES"
       )
 ```
+1. The species that was stocked at the highest rates was the Chinook salmon.
+2. The lake that had the highest fishing stocking activities was Lake Michigan.
+3. Stocking was at it's peak in Lake Michigan in 1988.
+
+
