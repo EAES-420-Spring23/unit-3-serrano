@@ -1,7 +1,7 @@
 ---
 title: "Lab 03 - Great Lakes Fish Stocking"
-author: "Insert your name here"
-date: "Insert date here"
+author: "chris serrano"
+date: "2/26/23"
 output: html_document
 ---
 
@@ -45,17 +45,29 @@ string variables= lake and state.
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+
+```{r salmon-weight}
+salmon_stock <- salmon_stock %>%
+  mutate(
+    AVERAGE = WEIGHT / NO_STOCKED * 1000
+  )
+salmon_stock
+```
+
+The mutate() function merges variables together in this code WEIGHT and NO_STOCKED to create a new one in this code it was AVERAGE.
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r summary-statistics}
+salmon_stock %>% 
+  group_by(LAKE) %>% 
+  filter(YEAR > 1999) %>% 
+  summarize(MEAN_NO_STOCKED = mean(NO_STOCKED, na.rm = TRUE),
+MEAN_WEIGHT = mean(WEIGHT, na.rm = TRUE)) %>% 
+  arrange(desc(MEAN_NO_STOCKED))
+```
+
+lake Huron and Superior have the largest salmon stocking event and lake Huron and Michigan have the largest mean weight.
 
 ### Exercise 5
 
