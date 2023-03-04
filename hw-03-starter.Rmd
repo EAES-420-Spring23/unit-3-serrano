@@ -46,11 +46,31 @@ glimpse(fish_stock)
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+```{r filter-catch, eval = FALSE}
+catch_data <- catch_data %>% 
+  filter(region == "U.S. Total",
+         species == "CHS",
+         lake == "MI")
+```
 
+```{r filter-stock, eval = FALSE}
+fish_stock <- fish_stock %>% 
+  filter(STATE_PROV %in% c("MI", "WI", "IL", "IN"),
+         SPECIES == "CHS",
+         LAKE == "MI")
+```
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
+CATCH DATA-
+There are `r nrow(catch_data)` in the dataset.
+First year is `r min(catch_data$year)` in the dataset.
+Last year is `r max(catch_data$year)` in the dataset.
+
+FISH STOCK-
+There are `r nrow(fish_stock)` in the dataset.
+First year is `r min(fish_stock$YEAR)` in the dataset.
+Last year is `r max(fish_stock$YEAR)` in the dataset.
+
 
 ### Exercise 5
 
