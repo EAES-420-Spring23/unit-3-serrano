@@ -72,12 +72,12 @@ First year is `r min(fish_stock$YEAR)` in the dataset.
 Last year is `r max(fish_stock$YEAR)` in the dataset.
 
 
-### Exercise 5
+### Exercise 5 
 
 chunks provided
 
 Remember to change eval = FALSE, to eval = TRUE, when you are ready to run the code/knit the document.
-### Exercise 6
+### Exercise 6 -1.5
 
 ```{r finalize-fish-stock, eval = TRUE}
 fish_stock_yearly <- fish_stock_yearly %>% 
@@ -114,7 +114,7 @@ catch_data %>%
                cols = 5:6)
 ```
 
-### Exercise 8
+### Exercise 8 -.5
 
 ```{r final-visualization, eval = FALSE}
 catch_data %>% 
