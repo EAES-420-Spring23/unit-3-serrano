@@ -17,7 +17,7 @@ fish_stock <- read_csv("data/great-lakes-fish-stock.csv")
 
 ## Exercises
 
-### Exercise 1
+### Exercise 1 -.5
 
 ```{r}
 glimpse(fish_stock)
@@ -26,7 +26,7 @@ glimpse(fish_stock)
 
 there are 8 variables and 56232 observations. each row represents an observation.
 
-### Exercise 2
+### Exercise 2 -.5
 
 ```{r fish_species}
 salmon_stock <- fish_stock %>%
